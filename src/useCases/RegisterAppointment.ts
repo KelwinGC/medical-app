@@ -7,6 +7,7 @@ interface RegisterAppointmentRequest {
 }
 
 export class RegisterAppointment {
+
   constructor(private appointmentRepository: AppointmentRepository) {}
 
   async execute({ insureId, scheduleId }: RegisterAppointmentRequest): Promise<Appointment> {
@@ -26,4 +27,5 @@ export class RegisterAppointment {
     appointment.id = generatedId
     return appointment;
   }
+  
 }
